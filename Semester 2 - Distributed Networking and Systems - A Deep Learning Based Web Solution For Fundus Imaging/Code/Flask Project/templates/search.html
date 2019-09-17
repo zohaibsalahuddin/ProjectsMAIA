@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patient Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/upload_segment.css">
+    <script src='jquery.js'> </script>
+    <script src="jquery.validate.js"> </script>
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='ban3.jpg') }})">
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='logo.png') }}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/load_add_patient_s">ADD PATIENT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/profile">PATIENT PROFILE</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/load_upload_segment_s">SEGMENTATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/search_patient_s">PATIENT INFORMATION</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">LOG OUT</a>
+                    </li>
+                </ul>
+                <div class="push"></div>
+            </div>
+        </nav>
+    </section>
+
+	<br>
+	<div class="search">
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+	</div>
+	<br>
+
+	<table id="myTable">
+		<tr class="header">
+			<th style="width:30%;">Patient</th>
+			<th style="width:70%;">Date</th>
+		</tr>
+	</table>
+
+	<script>
+
+		function post(path, params, method='post') {
+
+		  // The rest of this code assumes you are not using a library.
+		  // It can be made less wordy if you use one.
+		  const form = document.createElement('form');
+		  form.method = method;
+		  form.action = path;
+
+		  for (const key in params) {
+		    if (params.hasOwnProperty(key)) {
+		      const hiddenField = document.createElement('input');
+		      hiddenField.type = 'hidden';
+		      hiddenField.name = key;
+		      hiddenField.value = params[key];
+
+		      form.appendChild(hiddenField);
+		    }
+		  }
+
+		  document.body.appendChild(form);
+		  form.submit();
+		}
+
+		var data = {{value | safe}}
+		// Find a <table> element with id="myTable":
+		var table = document.getElementById("myTable");
+		for (i = 0; i < (data.result).length; i++) 
+		{ 
+
+
+			// Create an empty <tr> element and add it to the 1st position of the table:
+			var row = table.insertRow(i+1);
+
+			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+
+			// Add some text to the new cells:
+			cell2.innerHTML = (data.result)[i].date;
+			cell1.innerHTML = (data.result)[i].pat_id;
+		}
+
+		var table = document.getElementById("myTable");
+		if (table) {
+		  for (var i = 0; i < table.rows.length; i++) {
+		    table.rows[i].onclick = function() {
+		      tableText(this);
+		    };
+		  }
+		}
+
+		function tableText(tableRow) {
+		  var patient_id = tableRow.childNodes[0].innerHTML;
+		  var date = tableRow.childNodes[1].innerHTML;
+		  var obj = {'patient_id': patient_id, 'date': date};
+		  console.log(obj);
+		  post('/trial', obj);
+		}
+
+		function myFunction() {
+			var input, filter, table, tr, td, i, txtValue;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[0];
+				if (td) {
+					txtValue = td.textContent || td.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

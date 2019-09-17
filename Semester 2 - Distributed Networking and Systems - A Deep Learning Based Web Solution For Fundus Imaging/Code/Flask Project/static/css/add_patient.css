@@ -1,0 +1,88 @@
+
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+
+/* ###### NAVIGATION ############# */
+html,body{
+	/*background-image: url('images/ban3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	font-family: 'Numans', sans-serif;*/
+	background-image: url('ban3.jpg') no-repeat center center fixed ;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	
+}
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+
+}
+
+.navbar-brand img
+{
+	height:70px;
+	padding-left:15px;
+}
+
+.navbar-nav li
+{
+	padding:0 10px;
+
+}
+
+.navbar-nav li a
+{
+	float:right;
+	text-align:left;
+	color: #fff!important;
+}
+
+#nav-bar ul li a:hover
+{
+	color: #FF8000!important;
+}
+
+
+.buttons-all{
+left:20px ;
+
+}
+
+.navbar-toggler
+{
+	border:none!important;
+}
+
+.nav-link
+{
+	color: #555!important;
+	font-weight: 600;
+	font-size: 17px;
+	font-family: Garamond;
+}
+
+.card
+{
+	
+	width: 600px
+
+}
+
+#form-submit:hover {
+
+   background-color: #FF8000;
+
+}
+
+
+

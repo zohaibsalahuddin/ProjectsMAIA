@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Load Patient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/add_patient.css">
+    <script src='jquery.js'> </script>
+    <script src="jquery.validate.js"> </script>
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='ban3.jpg') }})">
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='logo.png') }}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/load_add_patient_s">ADD PATIENT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/profile">PATIENT INFORMATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/load_upload_segment_s">SEGMENTATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/search_patient_s">PATIENT REVIEW</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">LOG OUT</a>
+                    </li>
+                </ul>
+                <div class="push"></div>
+            </div>
+        </nav>
+    </section>
+
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Add patient</h3>
+
+                </div>
+                <div class="card-body">
+                    <form class="cmxform" id="addPatientForm" method="POST" action="/edit_patient">
+   			<div class="form-group">
+                            <label for="id">ID *:</label>
+                            <input type="text" name="id" class="form-control" id="id" minlength="3" placeholder="Name/ID"
+                                readonly>
+                        </div>
+                     
+                        <div class="form-group">
+                            <label for="id">Doctor ID *:</label>
+                            <input type="number" name="doc_id" class="form-control" id="id" minlength="3" placeholder="Name/ID"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Name*:</label>
+                            <input type="text" name="name" class="form-control" id="name" minlength="3" placeholder="Name/ID"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age *:</label>
+                            <input type="number" name="age" class="form-control" id="age" min="1" placeholder="Age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select class="form-control" name="gender" id="gender" required>
+                                <!-- <option value="">Choose...</option> -->
+                                <option value="male">M</option>
+                                <option value="female">F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="diabetes">Duration of the diabetes (in months):</label>
+                            <input type="number" name="duration" class="form-control" id="diabetes" min="0"
+                                placeholder="Duration of the diabetes">
+                        </div>
+                        <div class="form-group">
+                            <label for="glucose">Glucose Level (in HbA1C):</label>
+                            <input type="number" name="glucose" class="form-control" id="glucose" min="0" placeholder="Glucose Level">
+                        </div>
+                        <div class="form-group">
+                            <label for="pressure">Blood Pressure:</label>
+                            <input type="number" name="bp" class="form-control" id="pressure" min="0"
+                                placeholder="Blood Pressure">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="form-submit" class="form-control" value="Edit patient"
+                                class="btn float-right login_btn">
+                        </div>
+                    </form>
+                    <script>
+                        $("#addPatientForm").validate()
+                    </script>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            * required fields
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script>
+var data2 = {{value2 | safe}}
+		// Find a <table> element with id="myTable":
+		console.log(data2)
+
+		// Find a <table> element with id="myTable":
+
+		console.log((data2.result).length)
+		for (i = 0; i < 8; i++) 
+		{ 
+
+
+			// Create an empty <tr> element and add it to the 1st position of the table:
+
+
+			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+
+
+			// Add some text to the new cells:
+			
+	
+			if ( i == 0)
+			{
+				document.getElementsByName('name')[0].value=(data2.result)[0].pat_name;
+			}
+			if ( i == 1)
+			{
+				document.getElementsByName('age')[0].value=(data2.result)[0].pat_age;
+			}
+			if ( i == 2)
+			{
+				document.getElementsByName('gender')[0].value=(data2.result)[0].pat_gender;			
+			}
+			if ( i == 3)
+			{
+				document.getElementsByName('glucose')[0].value=(data2.result)[0].pat_gluc;
+			}
+			if ( i == 4)
+			{
+				document.getElementsByName('bp')[0].value=(data2.result)[0].pat_bp;
+			}
+			if ( i == 5)
+			{
+				document.getElementsByName('duration')[0].value=(data2.result)[0].pat_dur;
+			}
+
+			if ( i == 6)
+			{
+				document.getElementsByName('doc_id')[0].value=(data2.result)[0].doc_id;
+			}
+			if ( i == 7)
+			{
+				//document.getElementsByName('id')[0].disabled = true;
+				document.getElementsByName('id')[0].value=(data2.result)[0].pat_id;
+
+			}
+		
+		}
+		
+
+
+</script>
+</html>

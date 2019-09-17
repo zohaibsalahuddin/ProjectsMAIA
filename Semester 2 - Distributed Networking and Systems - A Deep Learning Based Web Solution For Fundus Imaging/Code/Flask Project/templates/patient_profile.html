@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sign In</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/upload_segment.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='ban3.jpg') }})">
+	<section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='logo.png') }}"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/load_add_patient_s">ADD PATIENT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/profile">PATIENT INFORMATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/load_upload_segment_s">SEGMENTATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/search_patient_s">PATIENT REVIEW</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">LOG OUT</a>
+                    </li>
+				</ul>
+				<div class="push"></div>
+			</div>
+		</nav>
+	</section>
+
+	<br>
+	<form action="/populate" method="post" enctype="multipart/form-data">
+		<div align="center">
+                <select class="form-control col-lg-3 text-center" id="sel_drop" name="pat_id" required>
+                    </select>
+		<br>
+		  <input type="submit" value="Get Information" name="get_info" />
+		<br> 
+		<br>
+		  <input type="submit" value="Edit Values" name="edit_info" />
+		<br>
+		</div>
+	</form>
+	<br>
+	
+
+	<table id="myTable">
+		<tr class="header">
+			<th style="width:70%;">Patient Information</th>
+			<th style="width:30%;">Value</th>
+		</tr>
+	</table>
+	<br>
+	
+	<script>
+		var data = {{value | safe}}
+		// Find a <table> element with id="myTable":
+		console.log(data)
+		let dropdown = document.getElementById("sel_drop");
+		// Clears any option 
+		dropdown.length = 0;
+		// Append our default option
+		let defaultOption = document.createElement('option');
+		defaultOption.text = 'Select a Patient';
+		dropdown.add(defaultOption);
+		dropdown.selectedIndex = 0;
+
+			for (let i = 0; i <(data.result).length; i++) {
+			    option = document.createElement('option');
+			    option.text = (data.result)[i].pat_id;
+			    option.value =  (data.result)[i].pat_id;
+			    dropdown.add(option);
+			}
+
+		var data2 = {{value2 | safe}}
+		// Find a <table> element with id="myTable":
+		console.log(data2)
+
+		// Find a <table> element with id="myTable":
+		var table = document.getElementById("myTable");
+		console.log((data2.result).length)
+		for (i = 0; i < 6; i++) 
+		{ 
+
+
+			// Create an empty <tr> element and add it to the 1st position of the table:
+
+
+			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+
+
+			// Add some text to the new cells:
+			
+	
+			if ( i == 0)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Patient's Name";
+				cell1.innerHTML = (data2.result)[0].pat_name;
+			}
+			if ( i == 1)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Patient's Age";
+				cell1.innerHTML = (data2.result)[0].pat_age;
+			}
+			if ( i == 2)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Gender";
+				cell1.innerHTML = (data2.result)[0].pat_gender;			
+			}
+			if ( i == 3)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Glucose Level";
+				cell1.innerHTML = (data2.result)[0].pat_gluc;
+			}
+			if ( i == 4)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Patient's Blood Pressure";
+				cell1.innerHTML = (data2.result)[0].pat_bp;
+			}
+			if ( i == 5)
+			{
+				var row = table.insertRow(i+1);
+				var cell0 = row.insertCell(0);
+				var cell1 = row.insertCell(1);
+				cell0.innerHTML = "Patient's Diabetes Duration in months";
+				cell1.innerHTML = (data2.result)[0].pat_dur;
+			}
+		
+		}
+		
+		var variable = {{drop | safe}}
+
+		if ( variable == 1)
+		{
+			var patid = {{patient_id | safe}}
+			document.getElementById("sel_drop").value = patid
+		}   
+
+		
+	</script>
+</body>
+
+</html>

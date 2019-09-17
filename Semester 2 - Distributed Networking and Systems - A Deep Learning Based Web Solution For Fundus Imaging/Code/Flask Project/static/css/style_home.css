@@ -1,0 +1,293 @@
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+html,body{
+	/*background-image: url('orange.jpeg');*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	font-family: 'Numans', sans-serif;
+}
+
+/* ###### NAVIGATION ############# */
+
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(255,255,255,0.0); /* THISSSSSSSSSSSSSSSSSSSSSS*/
+}
+
+
+
+.navbar-brand img
+{
+	height:140px;
+	padding-left:30px;
+}
+
+.navbar-nav li
+{
+	padding:0 10px;
+
+}
+
+.navbar-nav li a
+{
+	float:right;
+	text-align:left;
+	color: #fff!important;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+#nav-bar ul li a:hover
+{
+	color: #FF8000!important;
+}
+
+
+.buttons-all{
+left:20px ;
+
+}
+
+.navbar-toggler
+{
+	border:none!important;
+}
+
+.nav-link
+{
+	color: #555!important;
+	font-weight: 600;
+	font-size: 26px;
+	font-family: Garamond;
+}
+/* ########### SLIDER ###############*/
+
+#slider
+{
+	width:100%;
+	min-width: 100%;
+
+}
+.carousel-slide{
+	min-width: 100%;
+}
+.carousel-caption
+{
+	position: sticky;
+	top:50%;
+	transform: translateY(-50%);
+	bottom: initial!important;
+}
+
+.carousel-caption h5
+{
+	color: #FF8000; 
+	font-weight: 500;
+	font-size: 60px;
+	font-family: Garamond;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+/* ########### ABOUT ########## */
+
+#solution
+{
+	padding-top:50px;
+	padding-bottom:50px;
+	color: #555;
+/*	background:#6d98ac */
+background-image: url('images/orange.jpg');
+
+}
+
+.about-content
+{
+	color:#000000;
+	font-family: Garamond;
+	padding-top:20px
+	padding-bottom:20px
+}
+
+
+/* ########### Team Members ########## */
+
+#team
+{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: #555;
+	background:#fafff1 ;
+}
+h1
+{
+	text-align: center;
+	color: #555 !important;
+	padding-bottom: 10px;
+}
+h1::after
+{
+	content:'';
+	background: #007
+	display: block;
+	height: 3px;
+	width: 170px;
+	margin: 20px auto 5px;
+}
+
+.profile-pic 
+{
+	margin-top: 25px;
+
+}
+.profile-pic .img-box
+{
+	opacity:1;
+	display:block;
+	position: relative;
+}
+
+.profile-pic .img-box img
+{
+	filter: grayscale(1);
+	cursor:pointer;
+}
+
+
+.profile-pic .img-box img:hover
+{
+	filter: grayscale(0);
+	cursor:pointer;
+}
+
+.profile-pic h2
+{
+	font-size: 22px;
+	font-weight:bold;
+	margin-top:15px;
+	color: #007bff !important;
+}
+
+.profile-pic h3
+{
+	font-size: 15px;
+	font-weight:bold;
+	margin-top:15px;
+}
+
+# team .fa
+{
+	height:25px;
+	width:25px;
+	color: #007bff !important;
+	background: #fff;
+	padding:4px;
+	border-radius:50%;
+
+}
+
+
+.img-box ul
+{
+	padding:15px 0;
+		position:absolute;
+		z-index:2;
+		bottom:0;
+		left:50%;
+		transform: translateX(-50%);
+		opacity:0;
+
+}
+
+.img-box ul li
+{
+	padding: 5px;
+	display: inline-block;
+}
+
+.img-box:hover ul
+{
+	opacity:1;
+}
+
+.img-box ul, .img-box ul li
+{
+	transition:0.5s;
+}
+
+team_img1.resize {
+    width:540px; /* you can use % */
+    height: auto;
+}
+
+/* ######## LOGIN ########## */
+
+#login
+{
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(images/ban4.jpg);
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	background-attachment:fixed;
+	text-align:center;
+	padding: 100px;
+	font-family: sans-serif;
+	font-size: 38px;
+}
+
+/* ############## CONTACT ########### */
+
+#contact
+{
+	background: #efefef ;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	color: #777;
+
+}
+
+.contact-form
+{
+	padding:15px;
+}
+
+.form-control
+{
+	border-radius:0 !important;
+	border: none !important;
+}
+
+::placeholder
+{
+	color: #999 !important;
+}
+
+.follow
+{
+	background: #fff;
+	padding: 10px;
+	margin: 15px;
+}
+
+.contact-info .fa
+{
+	margin: 10px;
+	color: #007bff;
+	font-weight: bold;
+}
+
+/* ######## footer ######### */
+
+#footer
+{
+	background: #333;
+	color: #fff;
+	padding: 12px;
+}

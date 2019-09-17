@@ -1,0 +1,83 @@
+<!---- More icons https://fontawesome.com/icons ---------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign In</title>
+
+    <!-- Center the sign card (box) in a cool Boostrap style-->
+    <link rel="stylesheet" href="static/css/stylesheet.css">
+
+    <!--load all Icons styles -->
+    <link rel="stylesheet" href="static/fontawesome/css/all.css">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+
+    <script src='static/js/jquery.js'> </script>
+    <script src="static/js/jquery.validate.js"> </script>
+</head>
+
+<body style="background-image: url({{ url_for('static', filename='eyes.png') }})">
+    <!-- <img src="{{ login_image }}" alt="User Image"> -->
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+
+                </div>
+                <form action="/login" method="POST">
+                    <div class="card-body">
+
+                        <form class="cmxform" id="loginForm" method="get" action="/login">
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="username" id="username" placeholder="Username" required>
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" minlength="5" placeholder="Password" name = "password" required>
+                            </div>
+                            <div class="row align-items-center remember">
+                                <input type="checkbox">Remember Me
+                            </div>
+                            <div class="form-group" >
+                                <input type="submit" value="Login" class="btn float-right login_btn" style="margin-bottom: 20px">
+                            </div>
+                        </form>
+                        
+                        <script>
+                            $("#loginForm").validate()
+                        </script>
+                    </div>
+                </form>    
+                <div class="card-footer">
+
+                
+                    <form action="/register">
+                    <div style="margin-bottom: 10px">
+                        <input type="submit" value="New User? Press Here" class="btn btn-primary btn-small btn-block">
+                    </div>
+                    </form>
+
+                    <form action="/register">
+                <div>
+                    <input type="submit" value="Forgot Your Password?" class="btn btn-secondary btn-small    btn-block">
+                </div>
+                
+            </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

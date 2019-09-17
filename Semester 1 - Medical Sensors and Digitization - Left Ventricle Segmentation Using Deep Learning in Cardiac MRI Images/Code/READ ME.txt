@@ -1,0 +1,41 @@
+ Deep Learning-based Method for Fully Automatic Segmentation of Left Ventricular
+ Endocardium and Epicardium for MRI Images.
+ 
+ By :
+     Zohaib Salahuddin
+     Tewodros W. Arega
+ ------------------------------------------------------------------------------
+
+ STEPS TO INSTALL THE APPLICATION:
+
+ The link to download the application has been provided in the email as well as
+ is mentioned as fellows:
+
+ ATTENTION: THe Application has been tested on 3 systems which are Lenovo Y520,
+ HP Pavillion ok-11nl and Acer Aspire 7. All the systems had 64 bit windows and
+ Nvidia GTX 1050 Ti GPU.
+
+ The Application is supported for 64 bit Windows Systems with Good Specifications
+ as for laptops mentioned above. In case of any inconvenience with running the
+ application please contact at : zohaib.salahuddin@live.com.
+
+The application has been made only for testing. Our Algorithm uses keras tensorflow
+which can be rather difficult to install for systems because of its dependencies. 
+The production of this application .exe was in itself a difficult task.
+ --------------------------------------------------------------------------------
+
+ 1) Unzip the build.rar file.
+ 2) Once it has been unzipped, go the following path: build -> exe.win-amd64-3.5.
+ 3) Now executing the testing1.exe file. The first execution of the testing1.exe file
+    will take about 5-10 mins. Please be Patient. In the subsequent runs, it will take less
+    than 20 seconds to open.
+
+----------------------------------------------------------------------------------
+
+INCASE YOU HAVE KERAS TENSORFLOW AND PYTHON ALREADY INSTALLED:
+
+1) Please execute testing1.py to test our trained model.
+2) Please take care that model-lv_segmentation2.h5 , t_lv.h5 and t_myo.h5 
+   should be in the same folder as testing1.py.
+
+-----------------------------------------------------------------------------------

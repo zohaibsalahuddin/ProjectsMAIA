@@ -1,0 +1,103 @@
+
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+
+/* ###### NAVIGATION ############# */
+
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+
+}
+
+.navbar-brand img
+{
+	height:40px;
+	padding-left:30px;
+}
+
+.navbar-nav li
+{
+	padding:0 10px;
+
+}
+
+.navbar-nav li a
+{
+	float:right;
+	text-align:left;
+	color: #fff!important;
+}
+
+#nav-bar ul li a:hover
+{
+	color: #FF8000!important;
+}
+
+.navbar
+{
+	background: #bcbcbc
+}
+
+
+.navbar-toggler
+{
+	border:none!important;
+}
+
+.nav-link
+{
+	color: #555!important;
+	font-weight: 600;
+	font-size: 16px;
+	font-family: Garamond;
+}
+
+
+#myInput {
+  position:sticky;
+  left: 40%;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 20%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+
+}
+
+#myTable {
+
+  margin: auto;
+  width: 50%;
+  border-collapse: collapse; /* Collapse borders */
+  width: 50%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: center; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd; 
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+
+

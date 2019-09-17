@@ -1,0 +1,199 @@
+* {
+            box-sizing: border-box;
+        }
+
+        .img-zoom-container {
+            position: relative;
+        }
+
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid black;
+            /*set the size of the lens:*/
+            width: 40px;
+            height: 40px;
+        }
+
+        .img-zoom-result {
+            border: 1px solid #d4d4d4;
+            /*set the size of the result div:*/
+            width: 350px;
+            height: 350px;
+        }
+
+        .img-comp-container {
+            position: relative;
+            height: 200px;
+            /*should be the same height as the images*/
+        }
+
+        .img-comp-img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .img-comp-img img {
+            display: block;
+        }
+
+        .img-comp-slider {
+            position: absolute;
+            z-index: 9;
+            cursor: ew-resize;
+            /*set the appearance of the slider:*/
+            width: 40px;
+            height: 40px;
+            background-color: #2196F3;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+
+/* ###### NAVIGATION ############# */
+html,body{
+/*	background-image: url('images/ban3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	font-family: 'Numans', sans-serif;*/
+	/*background-image: url({{background}}) ;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+#b1
+{
+    display: none;
+}
+
+.navbar-brand img
+{
+	height:70px;
+	padding-left:15px;
+}
+
+.navbar-nav li
+{
+	padding:0 10px;
+
+}
+
+.navbar-nav li a
+{
+	float:right;
+	text-align:left;
+	color: #fff!important;
+}
+
+#nav-bar ul li a:hover
+{
+	color: #FF8000!important;
+}
+
+
+.buttons-all{
+left:20px ;
+
+}
+
+.navbar-toggler
+{
+	border:none!important;
+}
+
+.nav-link
+{
+	color: #555!important;
+	font-weight: 600;
+	font-size: 17px;
+	font-family: Garamond;
+}
+
+.card
+{
+	
+	width: 600px
+
+}
+
+#image_title{
+	color:white;
+	font-size: 15px;
+	font-weight: 600;
+
+}
+
+.container{
+	width: 100%;
+
+}
+#form-submit:hover {
+
+   background-color: #FF8000;
+
+}
+
+
+#myInput {
+	position:sticky;
+	left: 40%;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	width: 20%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
+  
+  }
+  
+  #myTable {
+  
+	margin: auto;
+	width: 50%;
+	border-collapse: collapse; /* Collapse borders */
+	width: 50%; /* Full-width */
+	border: 1px solid #ddd; /* Add a grey border */
+	font-size: 18px; /* Increase font-size */
+	background-color: white;
+  }
+  
+  #myTable th, #myTable td {
+	text-align: center; /* Left-align text */
+	padding: 12px; /* Add padding */
+  }
+  
+  #myTable tr {
+	/* Add a bottom border to all table rows */
+	border-bottom: 1px solid #FF8000; 
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+	/* Add a grey background color to the table header and on hover */
+	background-color: #f1f1f1;
+  }
+ 
+#segmented_image
+{
+	display: none
+}	
+
+#original_image
+{
+	display: none 
+}
+
